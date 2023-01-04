@@ -1,0 +1,391 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+:root{
+    /*  COLOR */
+    --main-color: #4F4F4F;
+    --second-color: #828282;
+    --third-color: #2F80ED;
+    --color-white: #FFFFFF;
+    --bg-color: #DADADA;
+    /* FONTS */
+    --main-font:"Montserrat";
+}
+body{
+    background: var(--bg-color);
+    font-family: var(--main-font);
+}
+a, a::after, a:hover{
+    text-decoration: inherit;
+}
+h3{
+    font-size: 18px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #4F4F4F;
+}
+.title_h3{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #4F4F4F;
+}
+.mobile{
+    padding-top: 1em;
+}
+.container_presentation{
+    padding-top: 0.5em;
+}
+.container_img_presentation{
+    margin: 10px;
+}
+.img_presentation{
+    width: 100%;
+    border-radius: 15px;
+}
+.the_card{
+    margin: 15px;
+    background: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px grey;
+    padding: 10px;
+}
+.name{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #4F4F4F;
+}
+.job{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    /* Gray 3 */
+
+    color: #828282;
+}
+.join_me{
+    margin: 1em 0 1em 0;
+}
+.small_description{
+    padding: 0 0 1em 0;
+}
+.container_experience{
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+}
+.container_small_logo{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.img_content_small_logo{
+    object-fit: contain;
+    width: 40%;
+}
+.description_profil{
+    margin: 15px;
+}
+.container_experience{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+.date{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #828282;
+    margin: 5px;
+}
+.description_experience .job {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333333;
+    margin: 5px;
+}
+.describe_job{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: #828282;
+    margin: 5px;
+}
+.progress{
+    height: 10px;
+    width: 60%;
+    margin-left: 15px;
+}
+.row_skill {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    margin: 15px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #4F4F4F;
+}
+.img_content_preview_project{
+    width: 100%;
+}
+.container_title_h3_project{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title_h3_projects {
+    border: 1px solid var(--color-white);
+    border-radius: 15px;
+    width: 93%;
+    height: 45px;
+    background: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0 0 20px;
+    box-shadow: 0px 5px 15px grey;
+    
+}
+.container_icon_chevron{
+    margin: 0 10px 0 0;
+}
+.fa-chevron-up{
+    display: none;
+}
+.title_project{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #333333;
+    margin: 15px;
+}
+.hashtag_project{
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #4F4F4F;
+    text-align: center;
+    margin: 10px;
+}
+.description_project{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #828282;
+    margin: 15px;
+}
+.actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px 0 10px 0;
+}
+.demo_project{
+    width: 200%;
+    height: 2em;
+    background: #2F80ED;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out;
+}
+.demo_project:hover{
+    background: white;
+    color: #2F80ED;
+    border: 1px solid #2F80ED;
+}
+.code_project:hover{
+    background: #2F80ED;
+    color: white;
+}
+.code_project{
+    width: 200%;
+    height: 2em;
+    border: 1px solid #2F80ED;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2F80ED;
+    font-weight: bold;
+}
+.small_text{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #E0E0E0;
+    margin: 15px 0 0 15px;
+}
+.img_content_preview_blog{
+    width: 100%;
+    border-radius: 15px;
+    margin: 15px 0 15px 0;
+}
+.title_blog{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #333333;
+    margin: 15px;
+}
+.goto{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #2F80ED;
+    margin: 15px;
+}
+.description_blog{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #828282;
+    margin: 15px;
+}
+.row_blog{
+    display: flex;
+    flex-direction: column;
+}
+.h3_hobbies{
+    margin: 15px;
+}
+.row_hobbie{
+    margin: 25px 0 25px 0;
+}
+.small_description_hobbie{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #828282;
+}
+.img_content_hobbie{
+    width: 100%;
+    border-radius: 15px;
+}
+.title_h4{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #333333;
+    margin: 0 0 5px 0;
+}
+.container_description_hobbie{
+    margin: 15px;
+}
+footer{
+    color: var(--second-color);
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+}
+@media(min-width: 768px){
+    .mobile{
+        display: none;
+    }
+    .desktop{
+        display: flex;
+        width: 100%;
+    }
+    .left_side{
+        display: flex;
+        flex-direction: column;
+        /* background-color: coral; */
+        height: auto;
+        width: 30%;
+    }
+    .right_side{
+        display: flex;
+        flex-direction: column;
+        /* background-color: lightblue; */
+        height: auto;
+        width: 70%;
+    }
+    .main_skills{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2em;
+    }
+    .right_side .the_card {
+        margin: 15px;
+        background: var(--color-white);
+        border-radius: 12px;
+        box-shadow: 0px 5px 15px grey;
+        padding: 10px;
+        width: 97%;
+    }
+    .projects{
+        margin-bottom: 3em;
+    }
+    .title_h3_projects {
+        border: 1px solid var(--color-white);
+        border-radius: 15px;
+        width: 97%;
+        height: 45px;
+        background: var(--color-white);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 0 0 20px;
+        box-shadow: 0px 5px 15px grey;
+    }
+    .row_project{
+        display: flex;
+    }
+    .container_preview_blog{
+        width: 80%;
+    }
+    .img_content_preview_project {
+        width: 100%;
+    }
+    .container_desctiption_row_blog{
+        display: flex;
+    }
+    .container_description_blog {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

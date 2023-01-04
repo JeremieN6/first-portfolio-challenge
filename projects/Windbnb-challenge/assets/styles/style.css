@@ -1,0 +1,108 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+:root{
+    --main-font:"montserrat";
+    --second-main-color: #828282;
+    --third-main-color: #4F4F4F;
+}
+.bloc_container_offers{
+    display: flex;
+    flex-direction: column;
+}
+.container_offers{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--main-font);
+    margin: 0 15px -2em 15px;
+}
+.container_offers h3{
+    font-size: 18px;
+    font-weight: bold;
+}
+.container_offers span{
+    font-weight: 500;
+    font-size: 14px;
+}
+.container_offer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+.container_img_offer{
+    width: 100%;
+}
+.img_content_offer{
+    width: 100%;
+    border-radius: 15px;
+}
+.offer_informations{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;    
+    margin: 10px 10px 0 10px;
+}
+.label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    border: 1px solid var(--third-main-color);
+    color: var(--third-main-color);
+    border-radius: 15px;
+    font-size: 9px;
+    font-weight: bold;
+    width: 25%;
+    height: 25px;
+    font-family: var(--main-font);
+}
+.flat_details{
+    font-family: var(--main-font);
+    color: var(--second-main-color);
+    font-size: 12px;
+}
+.title{
+    margin-top: 10px;
+    font-family: var(--main-font);
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+}
+.rate{
+    color: var(--third-main-color);
+}
+@media (min-width: 768px){
+    .bloc_container_offers{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .bloc_container_offers>* {
+        flex: 1 1 160px;
+    }
+    .offer_informations {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 5px 50px 0 20px;
+    }
+    .img_content_offer {
+        /* width: 90%; */
+        width: 394px;
+        height: 267px;
+        border-radius: 15px;
+    }
+    .flat_details {
+        font-family: var(--main-font);
+        color: var(--second-main-color);
+        font-size: 10px;
+    }
+    .title {
+        margin-top: 10px;
+        font-family: var(--main-font);
+        font-size: 11px;
+        font-weight: 600;
+        color: #333333;
+    }
+}

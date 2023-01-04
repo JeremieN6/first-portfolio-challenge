@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./assets/styles/style.css">
+  <title>Checkout Page</title>
+</head>
+<body>
+  <div id="app">
+    <div class="the_header">
+      <div class="logo">Checkout</div>
+    </div>
+    <div class="container_page">
+      <div class="left_desktop">
+                <div class="checkout_order">
+        <div class="order" v-for="item in products">
+          <div class="container_img_order">
+            <img :src="item.img" alt="" class="content_img_order">
+          </div>
+          <div class="order_detail">
+            <div class="title_order">
+              {{item.title}}
+            </div>
+            <div class="container_price_order">
+              <div class="current_price_order">${{item.price}}</div>
+              <div class="old_price_order">${{item.oldPrice}}</div>
+            </div>
+              <div class="container_number_order">
+                <div class="btn_less_order" id="btn_less_order" v-on:click="decrease">-</div>
+                <input type="number" class="input_quantity" id="input_quantity" name="quantity" value="1" min="0">
+                <div class="btn_more_order" id="btn_more_order" v-on:click="increase">+</div>
+              </div>
+          </div>
+        </div>
+        <div class="container_shipping">
+          <hr>
+          <div class="shipping_detail">
+            <div class="label">Shipping</div>
+            <div class="price">${{shipping}}</div>
+          </div>
+          <hr>
+          <div class="shipping_detail_total">
+            <div class="label">Total</div>
+            <div class="price">${{totalAmount}}</div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="right_desktop">    
+        <div class="container_contact_information">
+          <h3 class="title_h3">Contact Information</h3>
+          <div class="inputs">
+              <label for="email">E-mail</label>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <input type="email" name="email" id="email" class="input_email"  placeholder="Enter your email...">
+          </div>
+          <div class="inputs">
+            <label for="number">Phone</label>
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            <input type="number" name="number" id="number" class="input_number" placeholder="Enter your phone...">
+          </div>
+        </div>
+        <div class="shipping_address">
+          <h3 class="title_h3">Shipping Address</h3>
+          <div class="inputs">
+            <label for="text">Full name</label>
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <input type="text" name="text" id="text" placeholder="Entrer your name...">
+          </div>
+          <div class="inputs">
+            <label for="text">Address</label>
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <input type="text" name="text" id="text" placeholder="Your address...">
+          </div>
+          <div class="inputs inputs_city">
+            <label for="text">City</label>
+            <i class="fa fa-building" aria-hidden="true"></i>
+            <input type="text" name="text" id="text" placeholder="Your city...">
+          </div>
+          <div class="full_address">
+            <div class="inputs inputs_country">
+              <label for="text">Country</label>
+                <i class="fa fa-building building2" aria-hidden="true"></i>
+                <select name="country" id="country-select">
+                <option value="">Your country</option>
+                <option value="United State">United State</option>
+                <option value="France">France</option>
+                <option value="Spain">Spain</option>
+            </select>
+            </div>
+            <div class="inputs inputs_codeP">
+              <label for="text">Postal code</label>
+              <i class="fa fa-archive" aria-hidden="true"></i>
+                <input type="text" name="text" id="text" class="input_codeP" placeholder="Your postal code...">
+            </div>
+          </div>
+        </div>
+          <div class="save_informations">
+            <input type="checkbox" name="save_info" id="save_info">
+            <label for="save_info" id="save_info">Save this information for next time</label>
+          </div>
+          <div class="container_btn_next_step continue_desktop">
+            <div class="btn_next_step">
+              <p>Continue</p>
+            </div>
+          </div>
+      </div>
+    </div>
+
+      <div class="container_btn_next_step continue_mobile">
+        <div class="btn_next_step"><p>Continue</p></div>
+      </div>
+  </div>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+      <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          products:[
+            {img:"./assets/images/photo1.png",title:"Vintage Backbag",price:"54,99",oldPrice:"94.99"},
+            {img:"./assets/images/photo2.png",title:"Levi Shoes",price:"74,99",oldPrice:"124.99"}
+          ],
+          VintageBackbag_price: 54.99,
+          LeviShoes_price: 74.99,
+          shipping: 19,
+        },
+        methods:{
+          increase: function(){
+            var btnIncrease = document.getElementById("btn_more_order");
+            var input_quantity = document.getElementById("input_quantity");
+            var counter = input_quantity.value;
+            counter++;
+            input_quantity.value = counter;
+          },
+          decrease: function(){
+            var btnDecrease = document.getElementById("btn_less_order");
+            var input_quantity = document.getElementById("input_quantity");
+            var counter = input_quantity.value;
+            counter--;
+            input_quantity.value = counter;
+          }
+        },
+        computed:{
+          totalAmount: function(){
+            return this.VintageBackbag_price + this.LeviShoes_price + this.shipping
+          }
+        }
+      })
+      </script>
+      <footer>
+        <p> <strong>Jerem Checkout</strong> - by <i>Jérémie NGOYI MAOLE</i> - Développeur Full Stack</p>
+      </footer>
+</body>
+</html>
