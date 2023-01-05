@@ -20,23 +20,23 @@
           </div>
           <div class="description_profil">
             <div class="name">
-              Jérémie NGOYI MAOLE
+              {{profil.name}}
             </div>
             <div class="job">
-              Developper Full Stack
+              {{profil.job}}
             </div>
             <div class="join_me">
               <div class="mail">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                ngoyi.jeremie.pro@gmail.com
+                {{profil.mail}}
               </div>
               <div class="phone">
                 <i class="fa fa-phone" aria-hidden="true"></i>
-                +3366146****
+                {{profil.phone}}
               </div>
             </div>
             <div class="small_description">
-              Self-motivated developer, who is willing to learn and create outstanding applications.
+              {{profil.aboutMe}}
             </div>
           </div>
         </div>
@@ -44,34 +44,14 @@
           <div class="title_h3">
             Experiences
           </div>
-          <div class="container_experience">
+          <div class="container_experience" v-for="data in experiences">
             <div class="container_small_logo">
-              <img src="./assets/images/chelsea-logo.png" alt="Logo Chelsea" class="img_content_small_logo">
+              <img :src="data.img" :alt="data.xp_alt" class="img_content_small_logo">
             </div>
             <div class="description_experience">
-              <div class="date">Apr 2022 - Curent</div>
-              <div class="job">Developer Front-End</div>
-              <div class="describe_job">Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.</div>
-            </div>
-          </div>
-          <div class="container_experience">
-            <div class="container_small_logo">
-              <img src="./assets/images/nike-logo.png" alt="Logo Nike" class="img_content_small_logo logo_nike">
-            </div>
-            <div class="description_experience">
-              <div class="date">Apr 2022 - Curent</div>
-              <div class="job">Developer Front-End</div>
-              <div class="describe_job">Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.</div>
-            </div>
-          </div>
-          <div class="container_experience">
-            <div class="container_small_logo">
-              <img src="./assets/images/psg-logo.png" alt="Logo Paris Saint Germain" class="img_content_small_logo">
-            </div>
-            <div class="description_experience">
-              <div class="date">Apr 2022 - Curent</div>
-              <div class="job">Developer Front-End</div>
-              <div class="describe_job">Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.</div>
+              <div class="date">{{data.xp_period}}</div>
+              <div class="job">{{data.xp_title}}</div>
+              <div class="describe_job">{{data.xp_description}}</div>
             </div>
           </div>
         </div>
@@ -144,83 +124,41 @@
           </div>
         </div>
         <div class="container_title_h3_project">
-            <div class="title_h3_projects">
-            Projects (3)
+            <div class="title_h3_projects" id="title_projects_mobile">
+            Projects ({{projects.length}})
+            <div class="container_icon_chevron">              
+              <i class="fa fa-chevron-up" id="chevronDown" aria-hidden="true" v-on:click="hideNseek2"></i>
+              <i class="fa fa-chevron-down" id="chevronUp" aria-hidden="true" v-on:click="hideNseek2"></i>
+            </div>
           </div>
         </div>
-        <div class="projects">
+        <div class="projects" id="projects">
           <div class="container_projects">
-
-            <div class="row_project the_card">
-              <div class="hashtag_project">
-                <span>#HTML</span> <span>#CSS</span> <span>#responsive</span>
-              </div>
+            <div class="row_project the_card" v-for="props in projects">
               <div class="container_preview_project">
-                <img src="./assets/images/checkout-page.jpg" alt="Checkout Project" class="img_content_preview_project">
+                <img :src="props.img" :alt="props.alt" class="img_content_preview_project">
               </div>
               <div class="container_desctiption_row_project">
+                <div class="hashtag_project">
+                  <span>#HTML</span> <span>#CSS</span> <span>#responsive</span>
+                </div>
                 <div class="title_project">
-                  Checkout
+                 {{props.title}}
                 </div>
                 <div class="description_project">
-                  In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie. 
+                    {{props.description}}
                 </div>
                 <div class="actions">
-                  <div class="demo_project">
-                    Demo
-                  </div>
-                  <div class="code_project">
-                    Code
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row_project the_card">
-              <div class="hashtag_project">
-                <span>#HTML</span> <span>#CSS</span> <span>#responsive</span>
-              </div>
-              <div class="container_preview_project">
-                <img src="./assets/images/checkout-page.jpg" alt="Checkout Project" class="img_content_preview_project">
-              </div>
-              <div class="container_desctiption_row_project">
-                <div class="title_project">
-                  404 Error
-                </div>
-                <div class="description_project">
-                  In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie. 
-                </div>
-                <div class="actions">
-                  <div class="demo_project">
-                    Demo
-                  </div>
-                  <div class="code_project">
-                    Code
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row_project the_card">
-              <div class="hashtag_project">
-                <span>#HTML</span> <span>#CSS</span> <span>#responsive</span>
-              </div>
-              <div class="container_preview_project">
-                <img src="./assets/images/checkout-page.jpg" alt="Checkout Project" class="img_content_preview_project">
-              </div>
-              <div class="container_desctiption_row_project">
-                <div class="title_project">
-                  Gallery Page
-                </div>
-                <div class="description_project">
-                  In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie. 
-                </div>
-                <div class="actions">
-                  <div class="demo_project">
-                    Demo
-                  </div>
-                  <div class="code_project">
-                    Code
-                  </div>
+                  <a :href="props.urlDemo" target="_blank" class="linkDemoProject">
+                    <div class="demo_project">
+                      Demo
+                    </div>
+                  </a>
+                  <a :href="props.urlCode" target="_blank" class="linkCodeProject">
+                    <div class="code_project">
+                      Code
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -228,27 +166,28 @@
         </div>
         <div class="container_title_h3_project">
           <div class="title_h3_projects">
-          Blog (1)
+          Blog ({{blogs.length}})
         </div>
       </div>
         <div class="blogs the_card">
           <div class="container_blogs">
             <div class="row_blog">
-              <div class="container_desctiption_row_blog">
+              <div class="container_desctiption_row_blog" v-for="data in blogs">
                 <div class="small_text">Blog</div>
                 <div class="container_preview_blog">
-                  <img src="./assets/images/blog-2.jpg" alt="Checkout blog" class="img_content_preview_blog">
+                  <img :src="data.img" :alt="data.alt" class="img_content_preview_blog">
                 </div>
                 <div class="title_blog">
-                  How to organize your CSS
+                  {{data.title}}
                 </div>
                 <div class="description_blog">
-                  In this article I tell the story about Proin eu justo sit amet lacus bibendum tincidunt. Vivamus non volutpat nisl, a luctus mi.  
-                  Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.
+                  {{data.description}}
                 </div>
-                <div class="goto">
-                  dev.io
-                </div>
+                <a href="data.href" target="_blank">
+                  <div class="goto">
+                    {{data.url}}
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -258,42 +197,16 @@
             <h3 class="h3_hobbies">Hobbies</h3>
           </div>
           <div class="container_hobbies">
-            <div class="row_hobbie">
+            <div class="row_hobbie" v-for="item in hobbies">
               <div class="container_img_hobbie">
-                <img src="./assets/images/gaming.jpg" alt="Gaming Hobbie" class="img_content_hobbie">
+                <img :src="item.img" :alt="item.alt" class="img_content_hobbie">
               </div>
               <div class="container_description_hobbie">
                 <div class="title_hobbie">
-                  <h4 class="title_h4">Gaming</h4>
+                  <h4 class="title_h4">{{item.title}}</h4>
                 </div>
                 <div class="small_description_hobbie">
-                  Quisque feugiat malesuada molestie.
-                </div>
-              </div>
-            </div>
-            <div class="row_hobbie">
-              <div class="container_img_hobbie">
-                <img src="./assets/images/dev-web.jpg" alt="Gaming Hobbie" class="img_content_hobbie">
-              </div>
-              <div class="container_description_hobbie">
-                <div class="title_hobbie">
-                  <h4 class="title_h4">Web Dev</h4>
-                </div>
-                <div class="small_description_hobbie">
-                  Quisque feugiat malesuada molestie.
-                </div>
-              </div>
-            </div>
-            <div class="row_hobbie">
-              <div class="container_img_hobbie">
-                <img src="./assets/images/football.jpg" alt="Gaming Hobbie" class="img_content_hobbie">
-              </div>
-              <div class="container_description_hobbie">
-                <div class="title_hobbie">
-                  <h4 class="title_h4">Football</h4>
-                </div>
-                <div class="small_description_hobbie">
-                  Quisque feugiat malesuada molestie.
+                  {{item.description}}
                 </div>
               </div>
             </div>
@@ -348,42 +261,16 @@
               <h3 class="h3_hobbies">Hobbies</h3>
             </div>
             <div class="container_hobbies">
-              <div class="row_hobbie">
+              <div class="row_hobbie" v-for="data in hobbies">
                 <div class="container_img_hobbie">
-                  <img src="./assets/images/gaming.jpg" alt="Gaming Hobbie" class="img_content_hobbie">
+                  <img :src="data.img" :alt="data.alt" class="img_content_hobbie">
                 </div>
                 <div class="container_description_hobbie">
                   <div class="title_hobbie">
-                    <h4 class="title_h4">Gaming</h4>
+                    <h4 class="title_h4">{{data.title}}</h4>
                   </div>
                   <div class="small_description_hobbie">
-                    Quisque feugiat malesuada molestie.
-                  </div>
-                </div>
-              </div>
-              <div class="row_hobbie">
-                <div class="container_img_hobbie">
-                  <img src="./assets/images/dev-web.jpg" alt="Gaming Hobbie" class="img_content_hobbie">
-                </div>
-                <div class="container_description_hobbie">
-                  <div class="title_hobbie">
-                    <h4 class="title_h4">Web Dev</h4>
-                  </div>
-                  <div class="small_description_hobbie">
-                    Quisque feugiat malesuada molestie.
-                  </div>
-                </div>
-              </div>
-              <div class="row_hobbie">
-                <div class="container_img_hobbie">
-                  <img src="./assets/images/football.jpg" alt="Gaming Hobbie" class="img_content_hobbie">
-                </div>
-                <div class="container_description_hobbie">
-                  <div class="title_hobbie">
-                    <h4 class="title_h4">Football</h4>
-                  </div>
-                  <div class="small_description_hobbie">
-                    Quisque feugiat malesuada molestie.
+                    {{data.description}}
                   </div>
                 </div>
               </div>
@@ -582,9 +469,9 @@
         ,urlDemo:"./projects/Windbnb-challenge/index.html",urlCode:"https://github.com/JeremieN6/Windbnb-challenge"},
       ],
       hobbies:[
-        {title:"Gaming",img:"./assets/images/gaming.jpg",description:"Short description of this hobbie."},
-        {title:"Web Developement",img:"./assets/images/dev-web.jpg",description:"Short description of this hobbie."},
-        {title:"Football",img:"./assets/images/football.jpg",description:"Short description of this hobbie"}
+        {title:"Gaming",img:"./assets/images/gaming.jpg",alt:"Gaming", description:"Short description of this hobbie."},
+        {title:"Web Developement",img:"./assets/images/dev-web.jpg",alt:"Web Developement", description:"Short description of this hobbie."},
+        {title:"Football",img:"./assets/images/football.jpg",alt:"Football", description:"Short description of this hobbie"}
       ],
       blogs:[
         {img:"./assets/images/blog-2.jpg", alt:"Image Preview Blog", title:"How to organize your CSS", 
@@ -602,15 +489,33 @@
         var containerProjects = document.getElementById("projects");
 
         if(chevronUp.style.display === "none"){
+          containerProjects.style.display = "none";
           chevronUp.style.display = "block";
           chevronDown.style.display = "none";
-          containerProjects.style.display = "none";
         }
         else{
           chevronUp.style.display = "none";
           chevronDown.style.display = "block";
           containerProjects.style.display = "block";
           titleProjects.style.marginBottom = "15px";
+        }
+      },
+      hideNseek2: function(){
+        var chevronUp = document.getElementById("chevronUp");
+        var chevronDown = document.getElementById("chevronDown");
+        var titleProjectsMobile = document.getElementById("title_projects_mobile");
+        var containerProjects = document.getElementById("projects");
+
+        if(chevronUp.style.display === "none"){
+          containerProjects.style.display = "none";
+          chevronUp.style.display = "block";
+          chevronDown.style.display = "none";
+        }
+        else{
+          chevronUp.style.display = "none";
+          chevronDown.style.display = "block";
+          containerProjects.style.display = "block";
+          titleProjectsMobile.style.marginBottom = "15px";
         }
       }
     }
